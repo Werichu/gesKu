@@ -2,6 +2,7 @@
 #define MOTORORGANIZADOR_H_INCLUDED
 #include <iostream>
 #include <filesystem>
+#include <fstream>
 #include "Funciones.h"
 
 namespace fs = std::filesystem; // para usar "fs como clave de acceso a la biblioteca
@@ -60,7 +61,4 @@ public:
         }
     }
 };
-
-
-
 #endif // MOTORORGANIZADOR_H_INCLUDED
