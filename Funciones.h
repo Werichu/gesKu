@@ -17,6 +17,10 @@ void mostrarArchivo();
 Gestor g; //invocamos al objeto
 
 void menuOpciones(){
+/*
+    Esta funcion administra la funcionalidad de la aplicacion, a si misma, aqui son invocadas las funciones
+    que hacen posible su correcta ejecucion
+*/
         int opc; // para seleccionar las opciones del menu
         cargarArchivo();
     do{
@@ -42,6 +46,12 @@ void menuOpciones(){
 }
 
 bool fijaRutas(){
+/*
+    Esta funcion fija las rutas digitadas por el usuario hacia el objeto que administra la organiacion de los archivos
+        Variables auxiliares:
+            string origen:
+            string destino: {estas variables almacenan las rutas digitadas por el usuario}
+*/
     std::string origen, destino; //cadenas auxiliares para definir la ruta de los archivos
 
     // aqui el usuario digita la ruta de origen y destino donde movera/copeara archivos
@@ -60,11 +70,12 @@ bool fijaRutas(){
         return false;
     } // caso contrario el programa prosigue y guarda las direcciones en el objeto
 
- /*   if(fs::is_directory(origen) == fs::is_directory(destino)){
+    /*if(fs::is_directory(origen) == fs::is_directory(destino)){
         cout<<"-> Error, las rutas son identicas\n\n";
         return false;
     }// caso contrario el programa prosigue y guarda las direcciones en el objeto */
 
+    //aqui se guardan las direcciones digitadas por el usuario y se pasan al objeto
     g.fijaRutaOrigen(origen);
     g.fijaRutaDestino(destino);
     registroActividad(origen,destino);
