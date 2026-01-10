@@ -8,6 +8,10 @@
 namespace fs = std::filesystem; // para usar "fs como clave de acceso a la biblioteca
 using std::cout, std::endl; // usar la biblioteca estandar
 
+/*
+    Este objeto se encarga de manejar los archivos y utiliza las rutas digitadas por el usuario para la operacion
+*/
+
 class Gestor{
     std::string rutaOrigen;
     std::string rutaDestino;
@@ -23,15 +27,20 @@ public:
     }
 
     //metodos getters
-    std::string dameRutaorigen(){
-        return rutaOrigen;
-    }
+    // en esta ocasion no habra, se decidio usar el acceso directo de los atributos del objeto
 
-    std::string dameRutadestino(){
-        return rutaDestino;
-    }
 
-    void copiarArchivos(){// utilizamos la direccion de memoria de las rutas digitadas por el usuari
+    void copiarArchivos(){
+    /*
+        Esta funcion se encarga del copiado de archivos de un diractorio a otro
+            Variables auxiliares:
+                string RutaOrigen: <acceso directo a los atributos privados del objeto>
+                string RutaOrigen: <acceso directo a los atributos privados del objeto>
+                const fs::path& origen <estas variables tranforman las cadenas digitadas por el usuario a rutas o "caminos" de ficheros>
+                const fs::path& destino <estas variables tranforman las cadenas digitadas por el usuario a rutas o "caminos" de ficheros>
+    */
+
+        // utilizamos la direccion de memoria de las rutas digitadas por el usuario
         const fs::path& origen = rutaOrigen;
         const fs::path& destino = rutaDestino;
 
@@ -45,6 +54,16 @@ public:
     }
 
     void MoverArchivos(){
+    /*
+        Esta funcion s eencarga de mover archivos, en si copea lo que tiene un directorio o archivo a otro, se elimina
+        y se vuelve a crear el directorio de origen, funciona de manera similar al copeado solo con ese agregado
+            Variables auxiliares:
+                string RutaOrigen: <acceso directo a los atributos privados del objeto>
+                string RutaOrigen: <acceso directo a los atributos privados del objeto>
+                const fs::path& origen <estas variables tranforman las cadenas digitadas por el usuario a rutas o "caminos" de ficheros>
+                const fs::path& destino <estas variables tranforman las cadenas digitadas por el usuario a rutas o "caminos" de ficheros>
+
+    */
         const fs::path& origen = rutaOrigen; // se crean las rutas digitadas por el usuario
         const fs::path& destino = rutaDestino;
 
